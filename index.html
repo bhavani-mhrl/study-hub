@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>StudyHub — 10th • Inter • B.Tech</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ============ TOP NAVBAR ============ -->
+<header class="navbar">
+  <div class="brand" data-section="home" id="brandLogo">
+    <span class="brand-mark">SH</span>
+    <span class="brand-name">StudyHub</span>
+  </div>
+
+  <nav class="nav-links" id="navLinks">
+    <button class="nav-item active" data-section="home">Home</button>
+    <button class="nav-item" data-section="dashboard">Dashboard</button>
+    <button class="nav-item" data-section="subjects">Subjects</button>
+    <button class="nav-item" data-section="pyq">Previous Papers</button>
+  </nav>
+
+  <div class="navbar-right">
+    <div class="streak-pill" id="streakPill" title="Your daily streak">
+      <span class="streak-flame">🔥</span>
+      <span id="streakCount">0</span>
+      <span class="streak-word">day streak</span>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">☰</button>
+  </div>
+</header>
+
+<main class="content">
+
+    <!-- ---------------- HOME ---------------- -->
+    <section class="view active" id="view-home">
+
+      <div class="hero">
+        <div class="hero-text">
+          <p class="hero-eyebrow">10th · Intermediate · B.Tech, all in one place</p>
+          <h1>Study smarter, not scattered.</h1>
+          <p class="hero-sub">
+            One home for your syllabus, your streak, your previous papers and
+            your videos — instead of ten browser tabs and a WhatsApp forward
+            you can never find again.
+          </p>
+          <div class="hero-actions">
+            <button class="btn-primary" data-goto="subjects">Browse subjects</button>
+            <button class="btn-ghost" data-goto="dashboard">View my dashboard</button>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-row"><span>🎒</span><div><strong>10th Class</strong><small>7 subjects, fully mapped</small></div></div>
+          <div class="hero-card-row"><span>🎓</span><div><strong>Intermediate</strong><small>MPC · BiPC · HEC · CEC · MEC</small></div></div>
+          <div class="hero-card-row"><span>🛠️</span><div><strong>B.Tech</strong><small>CSE · IT · ECE · EEE · MECH · CIVIL</small></div></div>
+        </div>
+      </div>
+
+      <section class="about-section">
+        <div class="about-head">
+          <h2>Why this actually matters</h2>
+          <p class="sub">Most students don't fail from lack of effort — they fail from lack of a system. That's the gap StudyHub closes.</p>
+        </div>
+        <div class="about-grid">
+          <div class="about-card">
+            <span class="about-icon">🧭</span>
+            <h3>One clear syllabus map</h3>
+            <p>Every subject for your exact class and group — no more guessing which chapters actually count.</p>
+          </div>
+          <div class="about-card">
+            <span class="about-icon">📈</span>
+            <h3>Progress you can see</h3>
+            <p>Tick off topics as you finish them and watch your real progress bar fill up, subject by subject.</p>
+          </div>
+          <div class="about-card">
+            <span class="about-icon">🔥</span>
+            <h3>A streak that keeps you honest</h3>
+            <p>Small, consistent days beat last-minute cramming. Your streak is a daily nudge to show up.</p>
+          </div>
+          <div class="about-card">
+            <span class="about-icon">🎥</span>
+            <h3>Videos, right next to the topic</h3>
+            <p>No hunting through channels — open a subject and the right lesson is already loading.</p>
+          </div>
+          <div class="about-card">
+            <span class="about-icon">📝</span>
+            <h3>Real exam patterns</h3>
+            <p>Previous year papers for your class, one click away, so you know exactly what to expect.</p>
+          </div>
+          <div class="about-card">
+            <span class="about-icon">🆓</span>
+            <h3>Works entirely offline-first</h3>
+            <p>Your progress saves right in your browser — no sign-up, no server, nothing to lose.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-strip">
+        <div>
+          <h2>Ready to see where you stand?</h2>
+          <p class="sub">Your dashboard is already waiting — streak included.</p>
+        </div>
+        <button class="btn-primary" data-goto="dashboard">Open dashboard →</button>
+      </section>
+    </section>
+
+    <!-- ---------------- DASHBOARD ---------------- -->
+    <section class="view active" id="view-dashboard">
+      <div class="view-head">
+        <h1>Welcome back 👋</h1>
+        <p class="sub">Here's where you stand today.</p>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-card stat-flame">
+          <div class="stat-top">
+            <span class="stat-num" id="dashStreak">0</span>
+            <span class="stat-icon">🔥</span>
+          </div>
+          <div class="stat-label">Day streak</div>
+          <div class="stat-note" id="streakNote">Visit daily to keep it alive</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-top">
+            <span class="stat-num" id="dashCompleted">0</span>
+            <span class="stat-icon">✅</span>
+          </div>
+          <div class="stat-label">Topics completed</div>
+          <div class="stat-note" id="dashCompletedNote">out of 0 tracked</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-top">
+            <span class="stat-num" id="dashSubjects">0</span>
+            <span class="stat-icon">📗</span>
+          </div>
+          <div class="stat-label">Subjects started</div>
+          <div class="stat-note">across your course</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-top">
+            <span class="stat-num" id="dashPct">0%</span>
+            <span class="stat-icon">📊</span>
+          </div>
+          <div class="stat-label">Overall progress</div>
+          <div class="stat-note">of everything you opened</div>
+        </div>
+      </div>
+
+      <div class="dash-columns">
+        <div class="panel">
+          <h2>Continue where you left off</h2>
+          <div id="continueList" class="continue-list">
+            <p class="empty-note">Open a subject to start tracking your progress — it'll show up here.</p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2>Pick your course</h2>
+          <p class="panel-sub">Jump straight into subjects for your class.</p>
+          <div class="quick-course-grid">
+            <button class="course-quick" data-class="tenth">
+              <span class="qc-emoji">🎒</span>
+              <span>10th Class</span>
+            </button>
+            <button class="course-quick" data-class="inter">
+              <span class="qc-emoji">🎓</span>
+              <span>Intermediate</span>
+            </button>
+            <button class="course-quick" data-class="btech">
+              <span class="qc-emoji">🛠️</span>
+              <span>B.Tech</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------- SUBJECTS ---------------- -->
+    <section class="view" id="view-subjects">
+      <div class="view-head">
+        <h1>Subjects</h1>
+        <p class="sub">Choose your class, then your group or branch, then search.</p>
+      </div>
+
+      <div class="class-tabs" id="classTabs">
+        <button class="class-tab active" data-class="tenth">10th Class</button>
+        <button class="class-tab" data-class="inter">Intermediate</button>
+        <button class="class-tab" data-class="btech">B.Tech</button>
+      </div>
+
+      <div class="group-row" id="groupRow" style="display:none;"></div>
+
+      <div class="search-row">
+        <input type="search" id="subjectSearch" placeholder="Search a subject — e.g. Physics, DBMS, Trigonometry..." />
+      </div>
+
+      <div class="subject-grid" id="subjectGrid"></div>
+      <p class="empty-note" id="subjectEmpty" style="display:none;">No subjects match your search. Try a different keyword.</p>
+    </section>
+
+    <!-- ---------------- PYQ ---------------- -->
+    <section class="view" id="view-pyq">
+      <div class="view-head">
+        <h1>Previous Year Questions</h1>
+        <p class="sub">Pick your class to open a live, always up-to-date search for that paper set.</p>
+      </div>
+
+      <div class="class-tabs" id="pyqClassTabs">
+        <button class="class-tab active" data-class="tenth">10th Class</button>
+        <button class="class-tab" data-class="inter">Intermediate</button>
+        <button class="class-tab" data-class="btech">B.Tech</button>
+      </div>
+
+      <div class="pyq-grid" id="pyqGrid"></div>
+    </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="brand">
+        <span class="brand-mark">SH</span>
+        <span class="brand-name">StudyHub</span>
+      </div>
+      <p>A single, focused home for 10th, Intermediate and B.Tech students —
+        syllabus, streaks, videos and previous papers, all in one place.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <button class="footer-link" data-goto="home">Home</button>
+      <button class="footer-link" data-goto="dashboard">Dashboard</button>
+      <button class="footer-link" data-goto="subjects">Subjects</button>
+      <button class="footer-link" data-goto="pyq">Previous Papers</button>
+    </div>
+    <div class="footer-col">
+      <h4>Courses covered</h4>
+      <span class="footer-static">10th Class (State/CBSE pattern)</span>
+      <span class="footer-static">Intermediate — MPC, BiPC, HEC, CEC, MEC</span>
+      <span class="footer-static">B.Tech — CSE, IT, ECE, EEE, MECH, CIVIL</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="footerYear"></span> StudyHub. Built for students, by students.</span>
+    <span>Your data stays in your browser — nothing is uploaded anywhere.</span>
+  </div>
+</footer>
+
+<!-- ============ SUBJECT MODAL ============ -->
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div class="modal-head">
+      <span class="modal-icon" id="modalIcon">📘</span>
+      <div>
+        <h2 id="modalTitle">Subject</h2>
+        <p id="modalMeta" class="modal-meta">Class · Group</p>
+      </div>
+    </div>
+
+    <div class="modal-progress-row">
+      <div class="modal-progress-bar"><div class="modal-progress-fill" id="modalProgressFill"></div></div>
+      <span id="modalProgressText">0 / 0 topics</span>
+    </div>
+
+    <h3 class="modal-sub-heading">Topics</h3>
+    <ul class="topic-list" id="topicList"></ul>
+
+    <h3 class="modal-sub-heading">Video lessons</h3>
+    <div class="video-wrap">
+      <iframe id="modalVideo" src="" title="Subject video lessons" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <a id="modalYtLink" class="yt-fallback" href="#" target="_blank" rel="noopener">Open more videos on YouTube ↗</a>
+  </div>
+</div>
+
+<!-- Toast for small confirmations -->
+<div class="toast" id="toast"></div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
